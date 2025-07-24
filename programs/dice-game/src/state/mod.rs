@@ -13,6 +13,7 @@ pub struct Bet {
 
 impl Bet {
     pub fn to_slice(&self) -> Vec<u8> {
+        // trasn to slice juste to used in storing data to share it in the sys
         let mut s = self.player.to_bytes().to_vec();
         s.extend_from_slice(&self.amount.to_le_bytes());
         s.extend_from_slice(&self.slot.to_le_bytes());
